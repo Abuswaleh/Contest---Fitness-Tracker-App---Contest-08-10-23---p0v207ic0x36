@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const goalSchema = new mongoose.Schema({
-	name: { type: String, required: true },
+	name: { type: String },
 	description: { type: String },
 	target: { type: Number, required: true },
 	deadline: { type: Date, required: true },

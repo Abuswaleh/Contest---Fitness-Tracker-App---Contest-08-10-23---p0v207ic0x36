@@ -6,14 +6,8 @@ const createGoal = async (req, res) => {
 		// Retrieve data from req.body, create a new goal, and save it to the database
 		// Example response when goal is created successfully:
 		// res.status(201).json({ message: 'Goal created successfully', goal });
-		const { name, description, target, deadline, type } = req.body;
-		const goal = await Goal.create({
-			name,
-			description,
-			target,
-			deadline,
-			type,
-		});
+		const newBook = req.body;
+		const goal = await Goal.create(newBook);
 		res.status(201).json({ message: "Goal created successfully", goal });
 	} catch (error) {
 		res.status(500).json({
